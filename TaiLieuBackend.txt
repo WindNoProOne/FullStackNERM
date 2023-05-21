@@ -1,0 +1,44 @@
+Cài biến môi trường các file cần cài
+    npm install --save body-parser@1.19.0 dotenv@8.2.0 ejs@3.1.5 express@4.17.1
+    npm install --save-dev @babel/core@7.12.10 @babel/preset-env@7.12.10 @babel/node@7.12.10 nodemon@2.0.7
+    npm install --save-dev bcrypt@5.0.1
+    //Connect sql server
+        npm install --save-dev sequelize-cli@6.2.0
+        npm install --save mysql2@2.2.5
+        npm install --save sequelize@6.6.2
+
+
+        //Create  .sequelizerc
+            const path = require('path');
+            module.exports = {
+            'config': path.resolve('./src/config', 'config.json'),
+            'migrations-path': path.resolve('./src', 'migrations'),
+            'models-path': path.resolve('./src', 'models'),
+            'seeders-path': path.resolve('./src', 'seeders')
+            }
+
+        npx sequelize-cli init
+
+        //Tạo model 
+            npx sequelize-cli model:generate --name User --attributes firstName:string,lastName:string,email:string
+
+        //Tạo migrations:
+            Thêm vào file `.env` `NODE_ENV=development`
+            npx sequelize-cli db:migrate 
+            -> Câu lệnh dùng để updata lên my sql
+
+        //Tạo Seeder: 
+            npx sequelize-cli seed:generate --name demo-user
+
+        //Sau khi thêm db vào rồi thì chạy
+            npx sequelize-cli db:seed:all
+
+
+        //Cài thêm biense môi trường cho các file Connect
+           logging: false : thêm vào các file như config, connectDb
+ 
+
+
+
+ Lưu ý:
+    CRUD: Là viết tắt của 4 từ Create, read, update, delete

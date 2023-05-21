@@ -1,0 +1,6 @@
+Cài biến môi trường
+    npx create-react-app nameFile
+
+    dowLoad file coning của anh hỏi đân It https://github.com/haryphamdev/Frontend-React.JS-QuickStart.git
+    Yêu cầu: Node v14.17.0
+    
